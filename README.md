@@ -14,6 +14,17 @@ This project was submitted as part of the AI/Machine Learning Intern Challenge: 
 - **User Query**: "I love thrilling action movies set in space, with a comedic twist."
 - **System Output**: The system processes this query, compares it against a dataset of movies, and returns the top 3–5 closest matches.
 
+ **Example Output**
+User Query: I love thrilling superhero action movies
+Top 5 Recommendations (alpha=0.8):
+
+1) Kick-Ass (2010), Genre: Action,Comedy, IMDB Rating: 7.7, Score: 0.3681
+2) Let Me Make You a Martyr (2016), Genre: Action,Crime,Drama, IMDB Rating: 6.4, Score: 0.2497
+3) The Longest Ride (2015), Genre: Drama,Romance, IMDB Rating: 7.1, Score: 0.2450
+4) 20th Century Women (2016), Genre: Comedy,Drama, IMDB Rating: 7.4, Score: 0.2383
+5) Jagten (2012), Genre: Drama, IMDB Rating: 8.3, Score: 0.2264
+
+
 ## Requirements
 1. **Dataset**
    - **IMDB-Movie-Data.csv** (500 rows).
@@ -39,3 +50,6 @@ This project was submitted as part of the AI/Machine Learning Intern Challenge: 
    ```bash
    python3 -m venv venv
    source venv/bin/activate
+
+
+## My salary expectation is anything between $25-$35/hr. 
