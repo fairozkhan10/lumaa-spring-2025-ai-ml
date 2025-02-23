@@ -1,91 +1,41 @@
-# AI/Machine Learning Intern Challenge: Simple Content-Based Recommendation
-
-**Deadline**: Sunday, Feb 23th 11:59 pm PST
-
----
+# Simple Content-Based Movie Recommender (Enhanced)
 
 ## Overview
+This project builds a content-based movie recommender using TF-IDF and cosine similarity, with the following enhancements:
+- **imdb_eda.py**: A script that performs exploratory data analysis (EDA) on the first 500 rows of the `IMDB-Movie-Data.csv` dataset.
+- **imdb_recommend.py**: An enhanced recommendation system that:
+  1. Combines Genre and Description for richer text context.
+  2. Applies a simple rating-based re-rank to boost higher-rated movies.
+  3. Provides a command-line interface (CLI) with arguments for query, top_n, alpha, and genre_weight.
 
-Build a **content-based recommendation system** that, given a **short text description** of a user’s preferences, suggests **similar items** (e.g., movies) from a small dataset. This challenge should take about **3 hours**, so keep your solution **simple** yet **functional**.
+This project was submitted as part of the AI/Machine Learning Intern Challenge: Simple Content-Based Recommendation.
 
-### Example Use Case
-
-- The user inputs:  
-  *"I love thrilling action movies set in space, with a comedic twist."*  
-- Your system processes this description (query) and compares it to a dataset of items (e.g., movies with their plot summaries or keywords).  
-- You then return the **top 3–5 “closest” matches** to the user.
-
----
+## Example Use Case
+- **User Query**: "I love thrilling action movies set in space, with a comedic twist."
+- **System Output**: The system processes this query, compares it against a dataset of movies, and returns the top 3–5 closest matches.
 
 ## Requirements
+1. **Dataset**
+   - **IMDB-Movie-Data.csv** (500 rows).
+   - Source: [IMDB-Movie-Data.csv on GitHub](https://github.com/LearnDataSci/articles/blob/master/Python%20Pandas%20Tutorial%20A%20Complete%20Introduction%20for%20Beginners/IMDB-Movie-Data.csv).
+   - The dataset is included in this repository.
 
-1. **Dataset**  
-   - Use a **small** public dataset of items (e.g., a list of movies with plot summaries, or other textual descriptions).  
-   - Make sure the dataset is easy to handle (maybe 100–500 rows) so the solution remains quick to implement and run.  
-   - Include the dataset in your forked repository *or* provide instructions/link on how to download it.  
+2. **Approach**
+   - Use TF-IDF to convert text (combined Genre and Description) into vectors.
+   - Compute cosine similarity between a user’s query and each movie’s text.
+   - Optionally, re-rank results using the movie’s IMDB Rating.
+   - Return the top N recommendations (default 5).
 
-2. **Approach**  
-   - **Content-Based**: At a minimum, use text similarity to recommend items.  
-     - For instance, you can transform both the user’s text input and each item’s description into TF-IDF vectors and compute **cosine similarity**.  
-   - Return the **top N** similar items (e.g., top 5).
+3. **Code Organization**
+   - Python scripts: `imdb_eda.py` for EDA and `imdb_recommend.py` for recommendations.
+   - Functions are modular and include docstrings for clarity.
 
-3. **Code Organization**  
-   - You may use a **Jupyter Notebook** or **Python scripts**.  
-   - Keep it **readable** and **modular** (e.g., one section for loading data, one for building vectors, one for computing similarity, etc.).  
-   - Briefly comment or docstring your key functions/sections.
+4. **Output**
+   - When a user inputs a query, the system prints a list of recommended movie titles along with similarity scores and additional details (Year, Genre, IMDB Rating).
 
-4. **Output**  
-   - When given an input description (e.g., `"I like action movies set in space"`), your system should print or return a list of recommended items (e.g., 3–5 titles).  
-   - Include the similarity score or rank if you’d like.
-
-5. **Summary & Instructions**  
-   - A short `README.md` that includes:
-     - **Dataset**: Where it’s from, any steps to load it.  
-     - **Setup**: Python version, virtual environment instructions, and how to install dependencies (`pip install -r requirements.txt`).  
-     - **Running**: How to run your code (e.g., `python recommend.py "Some user description"` or open your notebook in Jupyter).  
-     - **Results**: A brief example of your system’s output for a sample query.
-
----
-
-## Deliverables
-
-1. **Fork the Public Repository**  
-   - **Fork** this repo into your own GitHub account.
-
-2. **Implement Your Solution**  
-   - Load and preprocess your dataset (e.g., read CSV, handle text columns).  
-   - Convert text data to vectors (e.g., TF-IDF).  
-   - Implement a function to compute similarity between the user’s query and each item’s description.  
-   - Return the top matches.
-   - Salary expectation per month (Mandatory)
-
-3. **Short Video Demo**  
-   - In a `.md` file (e.g., `demo.md`) within your fork, paste a link to a **brief screen recording** (video link).  
-   - Demonstrate:
-     - How you run the recommendation code.  
-     - A sample query and the results.
-
-4. **Deadline**  
-   - Submit your fork by **Sunday, Feb 23th 11:59 pm PST**.
-
-> **Note**: This should be doable within ~3 hours. Keep it **straightforward**—you do **not** need advanced neural networks or complex pipelines. A simple TF-IDF + cosine similarity approach is sufficient.
-
----
-
-## Evaluation Criteria
-
-1. **Functionality**  
-   - Does your code run without errors?  
-   - When given an input query, does it successfully output relevant items?
-
-2. **Code Quality**  
-   - Clear, commented code (where it counts).  
-   - Logical steps (load data → transform → recommend).
-
-3. **Clarity**  
-   - Is your `README.md` straightforward about setup, how to run, and what to expect?
-
-4. **ML/Recommendation Understanding**  
-   - Basic implementation of a content-based recommendation approach (vectorization, similarity measure).
-
-**We look forward to seeing your solution!** Good luck!
+## Setup
+1. **Python Version**: 3.9+ (or similar).
+2. **Virtual Environment** (Recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
