@@ -1,4 +1,4 @@
-# Simple Content-Based Movie Recommender (Enhanced)
+# Simple Content-Based Movie Recommender
 
 ## Overview
 This project builds a content-based movie recommender using TF-IDF and cosine similarity, with the following enhancements:
